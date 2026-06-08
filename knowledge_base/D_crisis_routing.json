@@ -1,0 +1,69 @@
+{
+  "RED": {
+    "level": "red",
+    "triggers": [
+      "自杀",
+      "不想活",
+      "想死",
+      "自残",
+      "跳楼",
+      "割腕",
+      "我现在要",
+      "撑不到明天",
+      "想结束",
+      "活不下去了",
+      "吃药",
+      "过量",
+      "真的受不了了"
+    ],
+    "action": {
+      "stop_generation": true,
+      "show_crisis_card": true,
+      "log_event": true,
+      "end_conversation": true,
+      "message": "检测到您可能正处于危机状态。为了您的安全，我必须停止当前对话。请立即联系："
+    }
+  },
+  "YELLOW": {
+    "level": "yellow",
+    "triggers": [
+      "不知道还能撑多久",
+      "完全崩溃了",
+      "几天没睡了",
+      "一直哭",
+      "吃不下饭",
+      "什么都做不了",
+      "好绝望",
+      "没有希望了",
+      "熬不下去了"
+    ],
+    "action": {
+      "limit_empathy_rounds": 2,
+      "insert_referral": true,
+      "give_grounding_card": true,
+      "suggest_R01": true,
+      "message": "我能感觉到你现在很痛苦。我可以陪你聊聊，但如果这种感觉持续，建议预约心理咨询（R01）。先试试这个着陆练习："
+    }
+  },
+  "GREEN": {
+    "level": "green",
+    "triggers": [
+      "压力",
+      "孤独",
+      "拖延",
+      "导师",
+      "实验",
+      "论文",
+      "毕业",
+      "感情",
+      "朋友",
+      "迷茫"
+    ],
+    "action": {
+      "normal_rag": true,
+      "provide_cards": true,
+      "provide_resources": true,
+      "message": "我理解你的感受。"
+    }
+  }
+}

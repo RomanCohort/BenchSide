@@ -1,0 +1,17 @@
+# Core dependencies
+numpy>=1.21.0
+torch>=1.10.0
+scipy>=1.7.0
+scikit-learn>=1.0.0
+
+# NLP
+jieba>=0.42.0
+transformers>=4.20.0
+
+# Utilities
+tqdm>=4.62.0
+requests>=2.26.0
+
+# Optional: Deep learning
+# tensorflow>=2.8.0
+# pytorch-lightning>=1.6.0
