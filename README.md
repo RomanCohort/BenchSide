@@ -1,6 +1,8 @@
-# Social Resilience Prediction with Privacy-Preserving GNN
+# BenchSide - JLU Mental Health Support System
 
-A privacy-preserving social resilience prediction system for graduate students using Federated Graph Neural Networks.
+> A privacy-preserving social resilience prediction system for graduate students using Federated Graph Neural Networks.
+
+---
 
 ## 📄 Academic Paper
 
@@ -119,6 +121,7 @@ GREEN: Normal RAG flow
 ├── data/
 │   └── training_large/               # Dataset
 ├── knowledge_base/                    # RAG resources
+├── miniprogram/                       # WeChat Mini Program
 └── docs/
     └── IRB/                          # Ethics approval materials
 ```
@@ -130,36 +133,16 @@ GREEN: Normal RAG flow
 - All resources verified from official sources
 - Crisis intervention protocols in place
 
-## 📜 License
+## 📱 Engineering Implementation
 
-GNU General Public License v3.0
+> The engineering implementation demonstrates real-world HCI application.
 
----
-
-## Academic vs Engineering
-
-This project follows a **dual-track approach**:
-
-| Track | Focus | Output |
-|-------|-------|--------|
-| **Academic** | Novel algorithms, statistical validation | CHB Paper |
-| **Engineering** | Real-world deployment, UX | WeChat Mini Program |
-
-The engineering implementation (see below) demonstrates real-world HCI application, which is **encouraged** by CHB journal as it shows practical impact.
-
----
-
-# 📱 Engineering Implementation
-
-> The following sections describe the practical deployment as a WeChat Mini Program, demonstrating the real-world HCI application of our academic research.
-
-## Installation & Usage Guide
-
-### For Researchers
+### Quick Start
 
 ```bash
 # Clone repository
-git clone https://github.com/YOUR_USERNAME/JLU-Mental-Health-Support-System.git
+git clone https://github.com/RomanCohort/BenchSide.git
+cd BenchSide
 
 # Install dependencies
 pip install -r requirements.txt
@@ -168,10 +151,24 @@ pip install -r requirements.txt
 python quick_start.py
 ```
 
-### For Developers
+### WeChat Mini Program
 
 See [ENGINEERING_README.md](./docs/ENGINEERING_README.md) for detailed setup.
 
+### JLU Resources
+
+| ID | 资源 | 电话 | 说明 |
+|----|------|------|------|
+| R01 | 心理健康教育中心 | 0431-85166120 | 免费心理咨询 |
+| R02 | 校医院急诊 | 0431-85166120 / 120 | 紧急情况 |
+| R03 | 24h心理热线 | 400-161-9995 / 12355 | 全国热线 |
+| R04 | 长春市危机热线 | 0431-89685000 | 本地危机干预 |
+| R05 | 长春市第六医院 | 0431-82703999 | 精神卫生中心 |
+
+## 📜 License
+
+GNU General Public License v3.0
+
 ---
 
-**This README serves both academic publication and open-source distribution purposes.**
+**如有紧急情况，请拨打：400-161-9995 或 12355**
