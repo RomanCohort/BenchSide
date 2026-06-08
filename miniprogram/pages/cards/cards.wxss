@@ -1,0 +1,174 @@
+/* 技能卡页面样式 */
+.cards-container {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding-bottom: 80px;
+}
+
+.header {
+  background: #52c41a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: rgba(255,255,255,0.8);
+  margin-top: 5px;
+  display: block;
+}
+
+/* 说明 */
+.disclaimer {
+  background: #fff3cd;
+  padding: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.disclaimer-icon {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.disclaimer-text {
+  font-size: 13px;
+  color: #856404;
+  line-height: 1.5;
+}
+
+/* 分类 */
+.category-tabs {
+  display: flex;
+  padding: 10px;
+  background: white;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.tab {
+  padding: 8px 15px;
+  font-size: 14px;
+  color: #666;
+  background: #f5f5f5;
+  border-radius: 15px;
+  margin: 0 5px;
+}
+
+.tab.active {
+  background: #52c41a;
+  color: white;
+}
+
+/* 技能卡 */
+.card-list {
+  padding: 10px;
+}
+
+.skill-card {
+  background: white;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card-type-tag {
+  font-size: 11px;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #333;
+}
+
+.card-summary {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 5px;
+}
+
+.card-when {
+  margin-top: 10px;
+  padding: 10px;
+  background: #e6f7ff;
+  border-radius: 5px;
+}
+
+.when-label {
+  font-size: 12px;
+  color: #1890ff;
+}
+
+.when-text {
+  font-size: 13px;
+  color: #333;
+  margin-top: 5px;
+  display: block;
+}
+
+.card-actions {
+  display: flex;
+  margin-top: 15px;
+}
+
+.view-btn {
+  flex: 1;
+  background: #1890ff;
+  color: white;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.copy-btn {
+  flex: 1;
+  background: #f5f5f5;
+  color: #666;
+  height: 40px;
+}
+
+.source-tag {
+  margin-top: 10px;
+  text-align: right;
+  font-size: 11px;
+  color: #999;
+}
+
+/* 资源推荐 */
+.resource-recommend {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 15px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.recommend-title {
+  font-size: 14px;
+  color: #666;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.recommend-btn {
+  width: 100%;
+  background: #1890ff;
+  color: white;
+  height: 45px;
+}

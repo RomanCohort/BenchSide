@@ -1,0 +1,76 @@
+<!--资源页面-->
+<view class="resources-container">
+  <!-- 标题 -->
+  <view class="header">
+    <text class="title">吉林大学心理健康资源</text>
+    <text class="subtitle">所有信息均来自官方渠道</text>
+  </view>
+
+  <!-- 分类筛选 -->
+  <view class="category-tabs">
+    <view
+      wx:for="{{categories}}"
+      wx:key="*this"
+      class="tab {{currentCategory === item ? 'active' : ''}}"
+      data-category="{{item}}"
+      bindtap="switchCategory"
+    >{{item}}</view>
+  </view>
+
+  <!-- 资源列表 -->
+  <scroll-view class="resource-list" scroll-y="true">
+    <view wx:for="{{resources}}" wx:key="id" class="resource-card">
+      <!-- 标签 -->
+      <view class="card-tags">
+        <text wx:for="{{item.tags}}" wx:key="*this" class="tag" style="background: {{item.color}}">{{item}}</text>
+      </view>
+
+      <!-- 名称 -->
+      <view class="card-title" style="color: {{item.color}}">{{item.name}}</view>
+
+      <!-- 电话 -->
+      <view class="card-phone" wx:if="{{item.phone}}">
+        <text class="phone-label">电话：</text>
+        <text class="phone-number">{{item.phone}}</text>
+        <text class="phone-alt" wx:if="{{item.phone_alt}}">/ {{item.phone_alt}}</text>
+        <button class="call-btn" data-phone="{{item.phone}}" bindtap="callPhone">拨打</button>
+      </view>
+
+      <!-- 地址 -->
+      <view class="card-address" wx:if="{{item.address}}">
+        <text class="address-label">地址：</text>
+        <text class="address-text">{{item.address}}</text>
+        <button class="copy-btn" data-address="{{item.address}}" bindtap="copyAddress">复制</button>
+      </view>
+
+      <!-- 时间 -->
+      <view class="card-hours" wx:if="{{item.hours}}">
+        <text class="hours-label">时间：</text>
+        <text class="hours-text">{{item.hours}}</text>
+      </view>
+
+      <!-- 预约方式 -->
+      <view class="card-howto" wx:if="{{item.how_to}}">
+        <text class="howto-label">预约：</text>
+        <text class="howto-text">{{item.how_to}}</text>
+      </view>
+
+      <!-- 备注 -->
+      <view class="card-note">
+        <text class="note-icon">💡</text>
+        <text class="note-text">{{item.note}}</text>
+      </view>
+
+      <!-- 来源标注 -->
+      <view class="source-tag">
+        <text>来源：[[{{item.id}}]]</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 紧急提示 -->
+  <view class="emergency-banner">
+    <text class="emergency-icon">🚨</text>
+    <text class="emergency-text">紧急情况请拨打：400-161-9995 / 120</text>
+  </view>
+</view>

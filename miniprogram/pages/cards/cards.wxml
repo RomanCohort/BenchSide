@@ -1,0 +1,64 @@
+<!--技能卡页面-->
+<view class="cards-container">
+  <!-- 标题 -->
+  <view class="header">
+    <text class="title">自助技能卡</text>
+    <text class="subtitle">非临床技巧，帮助你稳住状态</text>
+  </view>
+
+  <!-- 说明 -->
+  <view class="disclaimer">
+    <text class="disclaimer-icon">💡</text>
+    <text class="disclaimer-text">这些技能卡只是辅助工具，不能替代专业心理咨询。如需专业帮助，请预约[[R01]]心理健康教育中心。</text>
+  </view>
+
+  <!-- 分类 -->
+  <view class="category-tabs">
+    <view
+      wx:for="{{categories}}"
+      wx:key="*this"
+      class="tab {{currentCategory === item ? 'active' : ''}}"
+      data-category="{{item}}"
+      bindtap="switchCategory"
+    >{{item}}</view>
+  </view>
+
+  <!-- 卡片列表 -->
+  <scroll-view class="card-list" scroll-y="true">
+    <view wx:for="{{cards}}" wx:key="id" class="skill-card">
+      <!-- 类型标签 -->
+      <view class="card-type-tag" style="background: {{item.color}}">{{item.type}}</view>
+
+      <!-- 标题 -->
+      <view class="card-title">{{item.name}}</view>
+
+      <!-- 内容摘要 -->
+      <view class="card-summary">
+        <text>{{item.content.substring(0, 100)}}...</text>
+      </view>
+
+      <!-- 使用场景 -->
+      <view class="card-when">
+        <text class="when-label">适用场景：</text>
+        <text class="when-text">{{item.when_to_use}}</text>
+      </view>
+
+      <!-- 操作按钮 -->
+      <view class="card-actions">
+        <button class="view-btn" data-card="{{item}}" bindtap="viewCard">查看详情</button>
+        <button class="copy-btn" data-content="{{item.content}}" bindtap="copyCard">复制</button>
+      </view>
+
+      <!-- 来源标注 -->
+      <view class="source-tag">
+        <text>来源：[[{{item.id}}]]</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 资源推荐 -->
+  <view class="resource-recommend">
+    <text class="recommend-title">需要专业支持？</text>
+    <button class="recommend-btn" bindtap="viewResources">预约心理咨询 [[R01]]</button>
+  </view>
+</view>

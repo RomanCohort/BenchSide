@@ -1,0 +1,74 @@
+<!--首页-->
+<view class="index-container">
+  <!-- 声明弹窗 -->
+  <view class="modal" wx:if="{{!disclaimerAccepted}}">
+    <view class="modal-content">
+      <view class="modal-header">使用声明</view>
+      <view class="modal-body">
+        <view class="warning-box">
+          <text class="warning-icon">⚠️</text>
+          <text class="warning-text">
+            本系统是AI助手，不是心理咨询师。
+            不能提供诊断、治疗或用药建议。
+          </text>
+        </view>
+
+        <view class="info-section">
+          <text class="section-title">紧急情况请拨打：</text>
+          <view class="hotline-list">
+            <view wx:for="{{hotlines}}" wx:key="name" class="hotline-row">
+              <text>{{item.name}}: {{item.phone}}</text>
+            </view>
+          </view>
+        </view>
+
+        <view class="agreement">
+          <text>• 所有信息均来自吉林大学官方资源</text>
+          <text>• 危机情况会立即停止对话并弹出求助卡片</text>
+          <text>• 数据不上传服务器，隐私受保护</text>
+        </view>
+      </view>
+      <view class="modal-footer">
+        <button class="accept-btn" bindtap="acceptDisclaimer">我已了解，继续使用</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 主内容 -->
+  <view class="main-content" wx:if="{{disclaimerAccepted}}">
+    <!-- Logo区域 -->
+    <view class="logo-section">
+      <text class="logo-text">吉大心理支持</text>
+      <text class="logo-subtitle">研究生心理健康支持系统</text>
+    </view>
+
+    <!-- 功能介绍 -->
+    <view class="features-section">
+      <view wx:for="{{features}}" wx:key="title" class="feature-item">
+        <text class="feature-icon">{{item.icon}}</text>
+        <view class="feature-info">
+          <text class="feature-title">{{item.title}}</text>
+          <text class="feature-desc">{{item.desc}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 快速热线 -->
+    <view class="hotline-section">
+      <text class="section-title">紧急求助热线</text>
+      <view wx:for="{{hotlines}}" wx:key="name" class="hotline-card">
+        <view class="hotline-info">
+          <text class="hotline-name">{{item.name}}</text>
+          <text class="hotline-phone">{{item.phone}}</text>
+        </view>
+        <button class="call-btn" data-phone="{{item.phone}}" bindtap="callHotline">拨打</button>
+      </view>
+    </view>
+
+    <!-- 开始按钮 -->
+    <view class="action-section">
+      <button class="start-btn" bindtap="startUsing">开始使用</button>
+      <button class="resource-btn" bindtap="viewResources">查看全部资源</button>
+    </view>
+  </view>
+</view>

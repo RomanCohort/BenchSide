@@ -1,0 +1,233 @@
+/* 全局样式 */
+.container {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+/* 主题色 */
+.primary-color {
+  color: #1890ff;
+}
+
+.primary-bg {
+  background: #1890ff;
+}
+
+/* 安全声明栏 */
+.safety-banner {
+  background: #fff3cd;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: #856404;
+  border-bottom: 1px solid #ffeeba;
+}
+
+/* 危机卡片样式 */
+.crisis-card {
+  background: #dc3545;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 15px;
+}
+
+.crisis-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.hotline-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: rgba(255,255,255,0.1);
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.hotline-item text {
+  font-size: 14px;
+}
+
+.hotline-item button {
+  background: white;
+  color: #dc3545;
+  font-size: 12px;
+}
+
+/* 消息气泡 */
+.message {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message.user {
+  align-items: flex-end;
+}
+
+.message.system {
+  align-items: flex-start;
+}
+
+.bubble {
+  max-width: 70%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.message.user .bubble {
+  background: #1890ff;
+  color: white;
+}
+
+.message.system .bubble {
+  background: white;
+  color: #333;
+  border: 1px solid #e8e8e8;
+}
+
+.time {
+  font-size: 11px;
+  color: #999;
+  margin-top: 5px;
+}
+
+/* 输入区域 */
+.input-area {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 10px;
+  border-top: 1px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  flex: 1;
+  height: 40px;
+  background: #f5f5f5;
+  border-radius: 20px;
+  padding: 0 15px;
+  font-size: 14px;
+}
+
+.send-btn {
+  width: 60px;
+  height: 40px;
+  background: #1890ff;
+  color: white;
+  border-radius: 20px;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+/* 资源卡片 */
+.resource-card {
+  background: white;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.resource-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1890ff;
+  margin-bottom: 10px;
+}
+
+.resource-info {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.call-btn {
+  background: #52c41a;
+  color: white;
+  margin-top: 10px;
+}
+
+/* 技能卡 */
+.skill-card {
+  background: white;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.card-type {
+  font-size: 12px;
+  color: #1890ff;
+  background: #e6f7ff;
+  padding: 3px 8px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.card-content {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* 弹窗 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  width: 85%;
+  max-height: 80vh;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.modal-header {
+  background: #1890ff;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 15px;
+  max-height: 60vh;
+  overflow-y: scroll;
+}
+
+.modal-footer {
+  padding: 15px;
+  border-top: 1px solid #e8e8e8;
+  display: flex;
+  justify-content: center;
+}

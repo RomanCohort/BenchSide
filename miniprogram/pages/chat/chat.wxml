@@ -1,0 +1,102 @@
+<!--聊天页面-->
+<view class="chat-container">
+  <!-- 安全Banner -->
+  <view class="safety-banner" wx:if="{{safetyBannerVisible}}">
+    <text>⚠️ AI助手，非心理咨询师。紧急情况拨打400-161-9995</text>
+    <text class="close-btn" bindtap="hideSafetyBanner">×</text>
+  </view>
+
+  <!-- 消息列表 -->
+  <scroll-view id="message-list" class="message-list" scroll-y="true">
+    <view wx:for="{{messages}}" wx:key="id">
+      <view class="message {{item.type}}">
+        <view class="avatar">
+          <text wx:if="{{item.type === 'user'}}">👤</text>
+          <text wx:else>🤖</text>
+        </view>
+        <view class="bubble">{{item.content}}</view>
+        <view class="time">{{item.time}}</view>
+      </view>
+    </view>
+
+    <!-- 正在输入提示 -->
+    <view class="typing-indicator" wx:if="{{isTyping}}">
+      <text>正在思考...</text>
+    </view>
+  </scroll-view>
+
+  <!-- 输入区域 -->
+  <view class="input-area">
+    <input
+      class="input"
+      type="text"
+      placeholder="输入您想说的话..."
+      value="{{inputText}}"
+      bindinput="onInput"
+      confirm-type="send"
+      bindconfirm="sendMessage"
+    />
+    <button class="send-btn" bindtap="sendMessage">发送</button>
+  </view>
+
+  <!-- 危机卡片弹窗 -->
+  <view class="crisis-modal" wx:if="{{showCrisisModal}}" catchtouchmove="true">
+    <view class="crisis-card-content">
+      <view class="crisis-header">
+        <text class="crisis-icon">🚨</text>
+        <text class="crisis-title">{{crisisCard.title}}</text>
+      </view>
+
+      <view class="hotline-section">
+        <text class="section-label">24小时心理援助热线</text>
+        <view wx:for="{{crisisCard.hotlines}}" wx:key="name" class="hotline-item">
+          <view class="hotline-info">
+            <text class="hotline-name">{{item.name}}</text>
+            <text class="hotline-number">{{item.phone}}</text>
+          </view>
+          <button
+            class="call-btn urgent"
+            data-phone="{{item.phone}}"
+            bindtap="callHotline"
+          >立即拨打</button>
+        </view>
+      </view>
+
+      <view class="emergency-section">
+        <text class="section-label">就近急诊</text>
+        <text class="emergency-text">{{crisisCard.emergency}}</text>
+      </view>
+
+      <view class="reminder-section">
+        <text>{{crisisCard.reminder}}</text>
+      </view>
+
+      <button class="close-crisis-btn" bindtap="closeCrisisModal">已联系专业帮助，关闭</button>
+    </view>
+  </view>
+
+  <!-- 着陆卡弹窗 -->
+  <view class="grounding-modal" wx:if="{{showGroundingModal}}">
+    <view class="grounding-card-content">
+      <view class="grounding-header">
+        <text class="grounding-icon">🧘</text>
+        <text class="grounding-title">着陆练习</text>
+      </view>
+
+      <view class="grounding-body">
+        <text class="grounding-text">{{groundingContent}}</text>
+      </view>
+
+      <view class="grounding-footer">
+        <button class="close-btn" bindtap="closeGroundingModal">我知道了</button>
+        <button class="resource-btn" bindtap="viewResources">预约心理咨询</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 操作菜单 -->
+  <view class="action-menu">
+    <button class="menu-btn" bindtap="viewResources">📞 资源</button>
+    <button class="menu-btn" bindtap="clearMessages">🗑️ 清空</button>
+  </view>
+</view>
